@@ -1,7 +1,18 @@
-
-h1{
+.heading > h1{ 
+    font-size: 50px;
+    color: #ffffff;
     font-family: 'Nunito Sans', sans-serif;
-    color: white;
-    font-size: 150px;
-    margin: 0px;
+    font-weight: bold;
+    margin:0px ;
+    margin-left: 5px;
+
+}
+
+.heading > p{ 
+    font-size: medium;
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    margin:0px ;
+    margin-left: 10px;
+
 }
