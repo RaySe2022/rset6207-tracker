@@ -1,43 +1,46 @@
 var sessions = [];
 
-
-function addSession () { 
-    var session = document.getElementById("add_info");
-    if (session.style.display === "none") {
-        session.style.display = "block";
-            
-    }else{
-        session.style.display = "none";
-    }
+// Function to toggle the display of the add session form
+function addSession() {
+  var session = document.getElementById("add_info");
+  if (session.style.display === "none") {
+    session.style.display = "block";
+  } else {
+    session.style.display = "none";
+  }
 }
 
-function addExercise () {
-    var exercise = document.getElementById("exercise_info");
+// Function to add an exercise to the session
+function addExercise() {
+  var exercise = document.getElementById("exercise_info");
 
-    var exercise_name = document.createElement("input");
-    exercise_name.type = "text";
-    exercise_name.placeholder = "Exercise Name";
+  // Create input fields for exercise name, weight, and number of sets/reps
+  var exercise_name = document.createElement("input");
+  exercise_name.type = "text";
+  exercise_name.placeholder = "Exercise Name";
 
-    var exercise_weight = document.createElement("input");
-    exercise_weight.type = "number";
-    exercise_weight.placeholder = "Weight(kgs)";
+  var exercise_weight = document.createElement("input");
+  exercise_weight.type = "number";
+  exercise_weight.placeholder = "Weight(kgs)";
 
-    var exercise_num = document.createElement("input");
-    exercise_num.type = "number";
-    exercise_num.placeholder = "Number of Sets/Reps";
+  var exercise_num = document.createElement("input");
+  exercise_num.type = "number";
+  exercise_num.placeholder = "Number of Sets/Reps";
 
-    var exercise_item = document.createElement("li");
-    exercise_item.appendChild(exercise_name);
-    exercise_item.appendChild(exercise_weight);
-    exercise_item.appendChild(exercise_num);
+  // Create a list item to hold the exercise inputs
+  var exercise_item = document.createElement("li");
+  exercise_item.appendChild(exercise_name);
+  exercise_item.appendChild(exercise_weight);
+  exercise_item.appendChild(exercise_num);
 
-    exercise.appendChild(exercise_item);
+  // Append the exercise item to the exercise list
+  exercise.appendChild(exercise_item);
 
-    exercise.style.display = "block";
-
+  exercise.style.display = "block";
 }
 
-function clearFields () { 
+// Function to clear the input fields
+function clearFields() {
   document.getElementById("session_name").value = "";
   document.getElementById("session_date").value = "";
 
@@ -45,79 +48,120 @@ function clearFields () {
   exerciseInfo.innerHTML = "";
 }
 
+// Function to save the session data
+function saveSession() {
+  var sessionName = document.getElementById("session_name").value;
+  var sessionDate = document.getElementById("session_date").value;
 
-function saveSession () {
-//This fuction will save the session to the database
+  var exercises = [];
 
-var sessionName = document.getElementById("session_name").value;
-var sessionDate = document.getElementById("session_date").value;
-//Stores the session name and date
+  var exerciseElements = document.getElementById("exercise_info").getElementsByTagName("li");
 
-var exercises = []; // Array to store exercises for the session
-
-var exerciseElements = document.getElementById("exercise_info").getElementsByTagName("li");
-
-for (var i = 0; i < exerciseElements.length; i++) {
+  for (var i = 0; i < exerciseElements.length; i++) {
     var exerciseInputs = exerciseElements[i].getElementsByTagName("input");
 
     var exerciseName = exerciseInputs[0].value;
     var exerciseWeight = exerciseInputs[1].value;
-    var exerciseNum = exerciseInputs[2].values;
+    var exerciseNum = exerciseInputs[2].value;
 
     var exerciseData = {
-        name: exerciseName,
-        weight: exerciseWeight,
-        num: exerciseNum
-      };
+      name: exerciseName,
+      weight: exerciseWeight,
+      num: exerciseNum
+    };
 
     exercises.push(exerciseData);
-}
-var sessionData = {
+  }
+
+  var sessionData = {
     name: sessionName,
     date: sessionDate,
     exercises: exercises
   };
 
-sessions.push(sessionData);
+  sessions.push(sessionData);
 
-clearFields();
+  displaySessions();
 
-var session = document.getElementById("add_info");
-session.style.display = "none";
+  clearFields();
 
-//this makes the add session form disappear after the session is saved
-
-
-
-  // Optional: Clear the input fields or perform any other necessary operations
+  var session = document.getElementById("add_info");
+  session.style.display = "none";
 
   console.log(sessionData); // Log all saved sessions
-
-    displaySessions();
-
 }
 
-function displaySessions () {
-    var sessionsList = document.getElementById("sessions_list");
+// Function to display the sessions
+function displaySessions() {
+  var sessionsList = document.getElementById("sessions_list");
+  sessionsList.innerHTML = "";
 
-    for (var i = 0; i < sessions.length; i++) {
-        var session = sessions[i];
+  for (var i = 0; i < sessions.length; i++) {
+    var session = sessions[i];
 
-        var sessionDiv = document.createElement("div");
-        sessionDiv.classList.add ("session-item");
+    var sessionDiv = document.createElement("div");
+    sessionDiv.classList.add("session-item");
 
-        var sessionName = document.createElement("h3");
-        sessionName.innerHTML = session.name;
+    var sessionNum = document.createElement("p");
+    sessionNum.classList.add("session-num");
+    sessionNum.innerHTML = "Session " + (i + 1);
 
-        var sessionDate = document.createElement("p");
-        sessionDate.innerHTML = session.date;
+    var sessionName = document.createElement("h3");
+    sessionName.innerHTML = session.name;
 
-        var sessionDelete = document.createElement("button");
+    var sessionDelete = document.createElement("button");
+    sessionDelete.innerHTML = "Delete";
+    sessionDelete.addEventListener("click", createDeleteHandler(i));
 
-        sessionDiv.appendChild(sessionName);
-        sessionDiv.appendChild(sessionDate);
-        sessionDiv.appendChild(sessionDelete);
+    var sessionDate = document.createElement("p");
+    sessionDate.innerHTML = session.date;
 
-        sessionsList.appendChild(sessionDiv);
+    var exerciseList = document.createElement("ul");
+    exerciseList.classList.add("hidden");
+
+
+    for (var j = 0; j < session.exercises.length; j++) {
+      var exerciseData = session.exercises[j];
+
+      var exerciseItem = document.createElement("li");
+      var exerciseName = document.createElement("p");
+      exerciseName.innerHTML = exerciseData.name;
+      var exerciseWeight = document.createElement("p");
+      exerciseWeight.innerHTML = exerciseData.weight;
+      var exerciseNum = document.createElement("p");
+      exerciseNum.innerHTML = exerciseData.num;
+
+    
+      exerciseItem.appendChild(exerciseName);
+      exerciseItem.appendChild(exerciseWeight);
+      exerciseItem.appendChild(exerciseNum);
+      exerciseList.appendChild(exerciseItem);
     }
+
+    sessionDiv.appendChild(sessionNum);
+    sessionDiv.appendChild(sessionName);
+    sessionDiv.appendChild(sessionDate);
+    sessionDiv.appendChild(exerciseList);
+    sessionDiv.appendChild(sessionDelete);
+
+    sessionDiv.addEventListener("click", createExpandHandler(sessionDiv));
+
+    sessionsList.appendChild(sessionDiv);
+  }
+}
+
+// Function to create a delete handler for a session
+function createDeleteHandler(index) {
+  return function () {
+    sessions.splice(index, 1);
+    displaySessions();
+  };
+}
+
+// Function to create an expand handler for a session
+function createExpandHandler(sessionDiv) {
+  return function () {
+    var exerciseList = sessionDiv.querySelector("ul");
+    exerciseList.classList.toggle("hidden");
+  };
 }
