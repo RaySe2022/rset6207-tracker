@@ -1,3 +1,7 @@
+.body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 .heading > h1{ 
     font-size: 50px;
     color: #ffffff;
@@ -10,9 +14,18 @@
 
 .heading > p{ 
     font-size: medium;
-    color: #ffffff;
+    color: "black";
     font-family: 'Nunito Sans', sans-serif;
     margin:0px ;
     margin-left: 10px;
 
+}
+
+.session_gallery {
+    font-family: 'Nunito Sans', sans-serif;
+    color: "black";
+}
+
+.sub_menu > p { 
+    color: #b5b7b9;
 }

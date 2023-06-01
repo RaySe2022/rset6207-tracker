@@ -14,9 +14,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="scss/main.scss">
 
@@ -28,8 +28,49 @@
     <div class="date"></div>
     <div class="num_of_sessions"></div>
     <div class="pre_performance"></div>
-    <div class="session_gallery"></div>
+
+    <div class="session_gallery">
+    <!--This is where all the session information are stored-->
+      <div class = "menu_container">
+      <div class="top_menu">
+        <h2>Sessions</h2>
+        <div class="add">
+          <button onclick="addSession()">Add</button>
+        
+        </div>
+        <div class="sort">
+          <button onclick="sortSession()">Sort</button>
+        </div>
+      </div>
+
+      <div class="sub_menu">
+        <p>SESSION NAME</p>
+        <p>DATE</p>
+      </div>
+
+       <!--This is the div which is prompted when addbutton is clicked-->
+      <div id="add_info"> <!--This is called session in JS-->
+        <input type ="text" id="session_name" placeholder="Session Name">
+        <input type ="date" id="session_date" placeholder="Date">
+        <button onclick="addExercise()">Add Exercise</button>
+          <ul id="exercise_info">
+            
+          </ul>
+        <button onclick="saveSession()">Complete</button>
+      </div>
+
+      <ul id="sessions_list">
+        
+          
+      </ul>
+
+    </div>
+      
+     
+    </div>
     <div class="performance"></div>
+
+
     <div class="heading">
       <h1>Gym Session Tracker</h1>
       <p> Keep track of your gym sessions!</p>

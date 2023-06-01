@@ -1,22 +1,33 @@
 
 .date { 
-border-radius: 20px;
+border-radius: 10px;
 }
 
 .num_of_sessions { 
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .pre_performance { 
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .session_gallery { 
-    border-radius: 20px;
+    border-radius: 10px;
+}
+.sub_menu { 
+    
 }
 
+.sub_menu > p{ 
+    margin: 5px;
+    margin-left: 5%;
+}
+
+#add_info { 
+    display: none;
+}
 .performance { 
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .heading { 
@@ -24,4 +35,28 @@ border-radius: 20px;
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
+}
+
+#exercise_info{ 
+    display: none;
+}
+
+#sessions_list{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.session-item{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #ffffff;
+    
+}
+
+.session-item > p { 
+    margin-left: 5%;
 }
