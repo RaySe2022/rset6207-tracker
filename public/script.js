@@ -26,6 +26,7 @@ function addExercise() {
   var exercise_num = document.createElement("input");
   exercise_num.type = "number";
   exercise_num.placeholder = "Number of Sets/Reps";
+  
 
   // Create a list item to hold the exercise inputs
   var exercise_item = document.createElement("li");
@@ -52,6 +53,7 @@ function clearFields() {
 function saveSession() {
   var sessionName = document.getElementById("session_name").value;
   var sessionDate = document.getElementById("session_date").value;
+  var sessionPerf = document.getElementById("session_perf").value;
 
   var exercises = [];
 
@@ -76,12 +78,16 @@ function saveSession() {
   var sessionData = {
     name: sessionName,
     date: sessionDate,
-    exercises: exercises
+    exercises: exercises,
+    performance: sessionPerf
   };
 
   sessions.push(sessionData);
 
+
   displaySessions();
+  updateSessionCount();
+  updatePrePerformance()
 
   clearFields();
 
@@ -116,6 +122,12 @@ function displaySessions() {
     var sessionDate = document.createElement("p");
     sessionDate.innerHTML = session.date;
 
+    var sessionPerf = document.createElement("p");
+    sessionPerf.innerHTML = session.performance;
+
+    var saveSession = document.createElement("p");
+    saveSession.innerHTML = session.performance;
+
     var exerciseList = document.createElement("ul");
     exerciseList.classList.add("hidden");
 
@@ -141,6 +153,7 @@ function displaySessions() {
     sessionDiv.appendChild(sessionNum);
     sessionDiv.appendChild(sessionName);
     sessionDiv.appendChild(sessionDate);
+    sessionDiv.appendChild(sessionPerf);
     sessionDiv.appendChild(exerciseList);
     sessionDiv.appendChild(sessionDelete);
 
@@ -155,6 +168,8 @@ function createDeleteHandler(index) {
   return function () {
     sessions.splice(index, 1);
     displaySessions();
+    updateSessionCount();
+    updatePrePerformance()
   };
 }
 
@@ -165,3 +180,73 @@ function createExpandHandler(sessionDiv) {
     exerciseList.classList.toggle("hidden");
   };
 }
+
+//To display Num of sessions 
+function updateSessionCount() {
+    var sessionsList = document.getElementById("sessions_list");
+    var numSessions = sessionsList.children.length;
+
+    var numSessionsElement = document.getElementById("num_of_sess");
+    numSessionsElement.innerHTML = numSessions;
+}
+
+function updatePrePerformance() {
+    // Get the index of the most recent session
+    var latestSessionIndex = sessions.length - 1;
+  
+    // Check if there is any session data
+    if (latestSessionIndex >= 0) {
+      // Get the most recent session performance
+      var latestSessionPerf = sessions[latestSessionIndex].performance;
+  
+      // Update the pre_perf element with the latest session performance
+      document.getElementById("pre_perf").innerHTML = latestSessionPerf;
+    }
+  }
+  
+
+//FOR TIME 
+function updateDate() {
+    let today = new Date();
+  
+    // return number
+    let dayName = today.getDay(),
+      dayNum = today.getDate(),
+      month = today.getMonth(),
+      year = today.getFullYear();
+  
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const dayWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    // value -> ID of the html element
+    const IDCollection = ["day", "daynum", "month", "year"];
+    // return value array with number as a index
+    const val = [dayWeek[dayName], dayNum, months[month], year];
+    for (let i = 0; i < IDCollection.length; i++) {
+      document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+    }
+  }
+  
+  updateDate();
+
+  

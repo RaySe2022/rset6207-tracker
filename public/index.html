@@ -24,10 +24,35 @@
 
 <body>
 
+  <div class = "upper_back">  </div>
+
   <div class="container">
-    <div class="date"></div>
-    <div class="num_of_sessions"></div>
-    <div class="pre_performance"></div>
+    <div class="date">
+      <div class ="today">
+       <h2>Today's Date </h2>
+      </div>
+      <div class="display-date">
+        <span id="day">day </span>
+        <span id="daynum"> 00 </span>
+        <span id="month">month </span>
+        <span id="year">0000 </span>
+      </div>
+    </div>
+
+    <div class="num_of_sessions">
+      <h2>Number of Sessions</h2>
+      <div class="num_sess_container">
+      <p id="num_of_sess">0</p>
+      <p> Sessions</p>
+      </div>
+    </div>
+    <div class="pre_performance">
+      <h2>Previous Performance</h2>
+      <div class="pre_perf_container">
+        <p> last session was:</p>
+        <p id="pre_perf"></p>
+      </div>
+    </div>
 
     <div class="session_gallery">
     <!--This is where all the session information are stored-->
@@ -52,6 +77,13 @@
       <div id="add_info"> <!--This is called session in JS-->
         <input type ="text" id="session_name" placeholder="Session Name">
         <input type ="date" id="session_date" placeholder="Date">
+        <label for="session_perf">Rate your performance:</label>
+          <select id="session_perf">
+            <option value="Good">Good</option>
+            <option value="Average" selected>Average</option>
+            <option value="Poor">Poor</option>
+          </select>
+
         <button onclick="addExercise()">Add Exercise</button>
           <ul id="exercise_info">
             
