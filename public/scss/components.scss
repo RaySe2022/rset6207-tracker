@@ -1,10 +1,10 @@
 
 .date { 
-border-radius: 10px;
+border-radius: 5px;
 }
 
 .today { 
-    border-bottom: 1px solid rgb(144, 143, 143);
+    border-bottom: 1px solid rgb(245, 241, 241);
 }
 
 .display-date{ 
@@ -13,15 +13,15 @@ border-radius: 10px;
 
 
 .num_of_sessions { 
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .num_of_sessions > h2 { 
-    border-bottom: 1px solid rgb(144, 143, 143);
+    border-bottom: 1px solid rgb(245, 241, 241);
 }
 
 .pre_performance { 
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
 
@@ -29,11 +29,14 @@ border-radius: 10px;
     
 }
 .pre_performance > h2 { 
-    border-bottom: 1px solid rgb(144, 143, 143);
+  
+}
+
+.pre_perf_header { 
+    border-bottom: 1px solid rgb(245, 241, 241);
     margin:0px;
     padding-left: 5%;
     width: 95%;
-    height: 50%;
     display: flex;
     align-items: center;
 }
@@ -42,23 +45,40 @@ border-radius: 10px;
 .pre_perf_container { 
     margin-left: 5%;
 }
+
 .session_gallery { 
-    border-radius: 10px;
+    border-radius: 5px;
 }
+
+.add { 
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add > button { 
+    width:8vw;
+    height: 4vh;
+    border:2px solid #b0b0b0;
+}
+
 .sub_menu { 
     
 }
 
 .sub_menu > p{ 
-    margin: 5px;
-    margin-left: 5%;
 }
 
 #add_info { 
     display: none;
 }
 .performance { 
-    border-radius: 10px;
+    border-radius: 5px;
+}
+
+.performance_header{ 
+    border-bottom: 1px solid rgb(245, 241, 241);
+
 }
 
 .heading { 
@@ -73,22 +93,60 @@ border-radius: 10px;
     display: none;
 }
 
-#sessions_list{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
 
-.session-item{ 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #ffffff;
+.performance > h2 { 
+    border-bottom: 1px solid rgb(245, 241, 241);
     
 }
 
-.session-item > p { 
-    margin-left: 5%;
+#date_img{ 
+    width: 4vh;
+    height: 4vh;
+}
+
+#session_img{ 
+    width: 4vh;
+    height: 4vh;
+}
+.num_sess_header{ 
+    border-bottom: 1px solid rgb(245, 241, 241);
+}
+#prev_img { 
+    
+    width: 4vh;
+    height: 4vh;
+    margin-left: 3%;
+}
+
+#performance_img{ 
+    width: 4vh;
+    height: 4vh;
+    margin-left: 3%;
+}
+.session-div-hover:hover {
+    filter: brightness(90%); /* Adjust the brightness value as needed */
+  }
+
+.session-item{ 
+background-color: #f8fafb;
+border: 1px solid rgb(245, 241, 241);
+}
+
+.exercise-list { 
+background-color: #f8fafb;
+}
+
+#add_info { 
+background-color: #f8fafb;
+width: 10vw;
+padding: 5%;
+padding-top: 2.5%;
+border-radius: 2%;
+}
+
+#add_info_bot > ul{ 
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+
 }

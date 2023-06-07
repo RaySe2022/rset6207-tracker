@@ -24,12 +24,17 @@
 
 <body>
 
+  <img id="background" src="background.jpg" alt="background image">
+
+  <div class = "blur-overlay">  </div>
+
   <div class = "upper_back">  </div>
 
   <div class="container">
     <div class="date">
       <div class ="today">
        <h2>Today's Date </h2>
+       <img id="date_img" src="icons/date.png" alt="date icon">
       </div>
       <div class="display-date">
         <span id="day">day </span>
@@ -40,17 +45,23 @@
     </div>
 
     <div class="num_of_sessions">
-      <h2>Number of Sessions</h2>
+      <div class="num_sess_header">
+        <h2>Number of Sessions</h2>
+        <img id ="session_img"src="icons/sessions.png" alt="number of sessions icon">
+      </div>
       <div class="num_sess_container">
       <p id="num_of_sess">0</p>
       <p> Sessions</p>
       </div>
     </div>
     <div class="pre_performance">
-      <h2>Previous Performance</h2>
+      <div class="pre_perf_header">
+        <h2>Previous Performance</h2>
+        <img id="prev_img" src="icons/previous.png" alt="previous performance icon">
+      </div>
       <div class="pre_perf_container">
         <p> last session was:</p>
-        <p id="pre_perf"></p>
+        <div id="pre_perf"></div>
       </div>
     </div>
 
@@ -58,24 +69,32 @@
     <!--This is where all the session information are stored-->
       <div class = "menu_container">
       <div class="top_menu">
-        <h2>Sessions</h2>
-        <div class="add">
-          <button onclick="addSession()">Add</button>
+        <div class ="top_menu_left">
+          <h2>Sessions</h2>
+          <p> Keep record of your gym sessions</p>
+        </div>
+      <div class="add">
+        <button id ="add_session_button" onclick="addSession()">Add Session</button>
+      </div>
         
-        </div>
-        <div class="sort">
-          <button onclick="sortSession()">Sort</button>
-        </div>
       </div>
-
       <div class="sub_menu">
-        <p>SESSION NAME</p>
-        <p>DATE</p>
-      </div>
+        <div class="sub_menu_left">
+          <p>SESSION#</p>
+          <p>SESSION NAME</p>
+          <p>DATE</p>
+          <p>PERFORMANCE</p>
+        </div>
+          <div class="sub_menu_right">
+          </div>
+       </div>
 
        <!--This is the div which is prompted when addbutton is clicked-->
       <div id="add_info"> <!--This is called session in JS-->
-        <input type ="text" id="session_name" placeholder="Session Name">
+           <p> Add Session</p>
+        <label for="session_name">Name of session:</label>
+        <input type ="text" id="session_name" placeholder="Leg Day">
+        <label for="session_date">Date of session:</label>
         <input type ="date" id="session_date" placeholder="Date">
         <label for="session_perf">Rate your performance:</label>
           <select id="session_perf">
@@ -83,12 +102,13 @@
             <option value="Average" selected>Average</option>
             <option value="Poor">Poor</option>
           </select>
-
-        <button onclick="addExercise()">Add Exercise</button>
-          <ul id="exercise_info">
+        <div id= "add_info_bot">
+         <button id ="add_exercise_button" onclick="addExercise()">Add Exercise</button>
+           <ul id="exercise_info">
             
-          </ul>
-        <button onclick="saveSession()">Complete</button>
+            </ul>
+          <button id ="save_session_button" onclick="saveSession()">Complete</button>
+        </div>  
       </div>
 
       <ul id="sessions_list">
@@ -100,7 +120,15 @@
       
      
     </div>
-    <div class="performance"></div>
+    <div class="performance">
+      <div class="performance_header">
+        <h2>Progress</h2>
+        <img id="performance_img" src="icons/progress.png" alt="performance icon">
+      </div>
+      <div class ="performance_container">
+
+      </div>
+    </div>
 
 
     <div class="heading">

@@ -2,6 +2,10 @@ body{
     background-color: #fff;
 }
 
+.upper_back{
+    background-color: #050a30;
+}
+
 .date { 
     background-color: #ffffff;
 }
@@ -24,4 +28,14 @@ body{
 
 .sub_menu { 
     background-color: #f8fafb;
+}
+
+.add > button { 
+    background-color: #f8fafb;
+    border-radius: 8px;
+    color: #050a30;
+}
+.session-delete > button { 
+    color: #050a30;
+    border: none;
 }

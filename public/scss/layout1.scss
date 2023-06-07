@@ -1,0 +1,423 @@
+html, body{
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #background { 
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .blur-overlay { 
+    position: absolute;
+    z-index: 2;
+    top:0; 
+    left:0;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+  }
+  
+  .upper_back { 
+    position: absolute;
+    z-index: 3;
+    height: 30%;
+    width: 100%;
+  }
+  .container { 
+    position: relative;
+    z-index: 4;
+    height:100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1.2fr 1.3fr 1.2fr 0.3fr;
+    grid-template-rows: 0.9fr 0.7fr 2.1fr 0.1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row dense;
+    grid-template-areas:
+      ". heading . . ."
+      ". date num_of_sessions pre_performance ."
+      ". session_gallery session_gallery performance ."
+      ". . . . .";
+  }
+  
+  .date {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    grid-area: date;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48);
+  }
+  
+  .today { 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+  }
+  
+  #date_img { 
+    margin-left: 5%;
+  }
+  
+  .today >h2 {
+    margin-left: 5%;
+  }
+  
+  .display-date { 
+    display: flex;
+    height: 60%;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+  }
+  
+  .display-date > span { 
+    margin-left: 10px;
+  }
+  
+  .num_of_sessions {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    grid-area: num_of_sessions;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+  }
+  
+  
+  .num_sess_header { 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95%;
+    padding-left: 5%;
+    height: 40%;
+  }
+  
+  .num_sess_header > h2{ 
+    margin: 0px;
+    margin-left: 5%;
+  }
+  
+  #session_img { 
+  }
+  
+  .num_sess_container { 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    margin-left: 5%;
+  }
+  .num_sess_container > p{
+    margin: 0px;
+    margin-left: 15px;
+  } 
+  
+  
+  #num_of_sess {
+    margin: 0px;
+  
+  }
+  
+  .pre_performance {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: pre_performance;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48);
+  }
+  
+  .pre_perf_header { 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40%;
+    width: 95%;
+  }
+  
+  .pre_perf_header > h2{ 
+    margin: 0px;
+    margin-left: 5%;
+  }
+  
+  .pre_perf_container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 60%;
+  }
+  
+  .pre_perf_container > p{ 
+    margin: 0px;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    width: 95%;
+  }
+  
+  #pre_perf {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: flex-start;
+  
+  }
+  
+  #pre_perf > span { 
+    margin-left: 5%;
+  }
+  .session_gallery {  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-area: session_gallery;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48);
+  }
+  
+  .menu_container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .top_menu { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .top_menu_left { 
+    display: flex;
+    flex-direction: column;
+    width: 47.5%;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  
+  }
+  
+  .top_menu_left > h2{ 
+    margin: 0px;
+  }
+  
+  .top_menu_left > p { 
+    margin: 0px;
+  }
+  
+  .add {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 47.5%;
+    margin-right: 2.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .sub_menu {
+    height: 15%;
+  }
+  
+  .sub_menu_left { 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin-left: 3%;
+  }
+  
+  .sub_menu_left > p { 
+    display: flex;
+    width: 20%;
+  }
+  
+  .sub_menu_right { 
+    width: 20%;
+  }
+  
+  #sessions_list { 
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin: 0;
+  }
+  .session-item { 
+    height: 2.5vw;
+    display: grid;
+    grid-template-columns: 1.6fr 0.4fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "session-info session-delete"
+    "exercise-list exercise-list";
+    
+    
+    .exercise-list { grid-area: exercise-list; }
+    
+    .session-info { grid-area: session-info; }
+    
+    .session-delete { grid-area: session-delete; }
+    
+  }
+  .session-info { 
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
+    height: 5vh;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3.5%;
+  }
+  .session-info > *{ 
+    display: flex;
+    justify-content: flex-start;
+    width: 20%;
+  }
+  
+  .session-delete{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+  }
+  .session-delete > button { 
+    margin-right: 5%;
+    width: 50%;
+    height: 90%;
+  }
+  
+  #add_info { 
+    top: 50%;
+    right: 50%;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+  
+  }
+  
+  .exercise-list { 
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 6;
+    height: 5vh;
+  
+  }
+  .exercise-list { 
+    display: none;
+  }
+  
+  .exercise-list > li { 
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 19%;
+  }
+  
+  .exercise-list > li > p { 
+    width: 20%;
+  }
+  
+  .performance {  
+    display: flex;
+    flex-direction: column;
+    grid-area: performance;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.48); 
+  }
+  
+  .performance_header { 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 15%;
+    margin:0px;
+    padding-left: 5%;
+    align-items: center;
+    width: 95%;
+  }
+  
+  .performance_container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 80%;
+  }
+  
+  
+  .heading { 
+    position: relative;
+    grid-area: heading; 
+  }
+  
+  .hidden { 
+    display: none;
+  }
+  
+  .session-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure the overlay appears on top */
+  }
+  .performance_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .session-performance { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #f8fafb;
+  }
+
+  
+  .session-performance> * { 
+    margin-left: 2%;
+    margin-right: 2%;
+  }

@@ -1,0 +1,128 @@
+@media screen and (max-width: 768px) {
+  .container {  display: grid;
+    grid-template-columns: 0.5fr 2.9fr 2.9fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". heading heading ."
+      ". date num_of_sessions ."
+      ". session_gallery session_gallery ."
+      ". session_gallery session_gallery ."
+      ". performance pre_performance ."
+      ". . . .";
+  }
+  
+  .heading { 
+    grid-area: heading;
+   }
+  .heading > h1{
+    font-size: 2.2vh;
+   }
+  .heading > p{ 
+    font-size: 1.2vh;
+    margin-left: 2%;
+   }
+  
+  .date { 
+    grid-area: date;
+   }
+  
+  .date > .today > h2 { 
+    font-size: 1.2vh;
+   }
+
+  .display-date > span { 
+    font-size: 2vh;
+    margin: 1%;
+   }
+   
+   .num_of_sessions { 
+    grid-area: num_of_sessions;
+   }
+
+   .num_of_sessions > .num_sess_header > h2 {
+    font-size: 1.2vh;
+   }
+   
+    .num_of_sessions > .num_sess_container > p {
+      font-size: 2vh;
+    }
+
+    #num_of_sess {
+      font-size: 2vh;
+    }
+  
+   .session_gallery { 
+    grid-area: session_gallery; 
+   }
+   #add_session_button {
+    font-size: 1vh;
+    border: none;
+    }
+  .top_menu > .top_menu_left > h2 { 
+    font-size: 1.2vh;
+   }
+  .top_menu > .top_menu_left > p { 
+    font-size: 1.2vh;
+   }
+  #add_info { 
+    width:40vw;
+    top: 30%;
+    left: 30%;
+  }
+  .session-delete > button{
+    font-size: 0.5vh;
+    padding: 0;
+    height:1.2vh;
+  }
+  .performance_header { 
+    height: 20%;
+  }
+
+  .performance_header > h2 { 
+    font-size: 1.2vh;
+  }
+
+  #performance_img { 
+    height:2vh;
+    width: 2vh;
+  }
+
+  .session-performance { 
+    height:20%;
+  }
+  
+  .session-performance > * { 
+    font-size: 1vh;
+  }
+
+  .pre_perf_header { 
+    height: 20%;
+  }
+  
+  .pre_perf_header > h2 { 
+    font-size: 1.2vh;
+  }
+
+  #prev_img { 
+    height:2vh;
+    width: 2vh;
+  }
+
+  .session-info > * { 
+    font-size: 1vh;
+  }
+
+  .exercise-list > li{ 
+    height: 10%;
+    font-size: 1vh;
+  }
+
+  .performance { grid-area: performance; }
+  
+  .pre_performance { grid-area: pre_performance; }
+  
+  
+
+}

@@ -3,7 +3,7 @@
 }
 
 .heading > h1{ 
-    font-size: 50px;
+    font-size: 2.2vw;
     color: #ffffff;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
@@ -13,7 +13,7 @@
 }
 
 .heading > p{ 
-    font-size: 20px;
+    font-size: 1vw;
     color: #dfdedef4;
     font-family: 'Nunito Sans', sans-serif;
     margin:0px ;
@@ -22,57 +22,57 @@
 }
 
 .today { 
-    font-size: 20px;
+    font-size: 0.8vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-
 }
 
 .display-date { 
-    font-size: 40px;
+    font-size: 1.5vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-
-
 }
+
 .num_of_sessions { 
-    font-size: 20px;
+    font-size: 0.8vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-
 }
 
 #num_of_sess{ 
-    font-size: 40px;
+    font-size: 1.7vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
 }
 
 .num_sess_container > p{
-    font-size:35px;
+    font-size:1.7vw;
 }
 
 .pre_performance { 
-    font-size: 20px;
+    font-size: 0.8vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
 }
 
 .pre_performance_container { 
-    font-size: 20px;
+    font-size: 1vw;
     color: "black";
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
 }
-#pre_perf {
-    font-size: 30px;
+.pre_perf_container > p{
+    font-size: 0.7vw;;
   }
 
+#pre_perf { 
+    font-size: 1.7vw;
+    color: "black";
+}
 .session_gallery {
     font-family: 'Nunito Sans', sans-serif;
     color: "black";
@@ -81,3 +81,41 @@
 .sub_menu > p { 
     color: #b5b7b9;
 }
+
+.performance_header > h2 { 
+    font-size: 1.2vw;
+    font-family: 'Nunito Sans', sans-serif;
+    margin:0px ;
+    margin-left: 5%;
+}
+
+.session-performance span {
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", "Twemoji", sans-serif;
+  }
+
+.add > button { 
+    font-size: 1.5vh;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+  }
+
+.top_menu_left > h2 {
+    font-size: 1.2vw;
+    font-family: 'Nunito Sans', sans-serif;
+ }
+
+ .sub_menu { 
+    font-weight: bolder;
+    font-size: 0.8vw;
+ }
+
+ .session-delete > button { 
+    font-family: 'Nunito Sans', sans-serif;
+
+ }
+
+ .session-info > * { 
+    font-size: 0.8vw;
+    font-family: 'Nunito Sans', sans-serif;
+    margin:0px ;
+ }
